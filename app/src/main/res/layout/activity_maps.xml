@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Map_MainActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/zone_de_texte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFiles"
+        tools:context=".Map_MainActivity"
+        tools:layout="@layout/support_simple_spinner_dropdown_item" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <ToggleButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:backgroundTint="@color/blue"
+            android:drawableTop="@android:drawable/ic_menu_save"
+            android:gravity="center"
+            android:onClick="saveRouteWithInfos"
+            android:text="@string/togglebutton"
+            android:textColor="@color/white"
+            android:textSize="0sp" />
+
+        <ToggleButton
+            android:id="@+id/btnFiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:backgroundTint="@color/cyan"
+            android:drawableTop="@android:drawable/ic_menu_view"
+            android:gravity="center"
+            android:onClick="showFilesInfo"
+            android:text="@string/togglebutton"
+            android:textColor="@color/white"
+            android:textSize="0sp" />
+
+        <ToggleButton
+            android:id="@+id/btnEnvoyer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:backgroundTint="@color/gray"
+            android:drawableTop="@android:drawable/ic_media_play"
+            android:gravity="center"
+            android:onClick="toggleRun"
+            android:text="@string/waitingGPS"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/white"
+            android:textOff="@string/waitingGPS"
+            android:textSize="8sp"
+            android:textStyle="italic" />
+
+        <ToggleButton
+            android:id="@+id/btnCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:backgroundTint="@color/orange"
+            android:checked="true"
+            android:drawableTop="@android:drawable/ic_menu_mylocation"
+            android:gravity="center"
+            android:onClick="toggleCenter"
+            android:text="@string/togglebutton"
+            android:textColor="@color/white"
+            android:textSize="0sp" />
+
+        <ToggleButton
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:backgroundTint="@color/red"
+            android:drawableTop="@android:drawable/ic_menu_close_clear_cancel"
+            android:gravity="center"
+            android:onClick="reset"
+            android:text="@string/togglebutton"
+            android:textColor="@color/white"
+            android:textSize="0sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/zone_de_texte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        android:clickable="false"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/gray"
+            android:drawableTop="@drawable/distance50"
+            android:text="distance"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:iconTint="@color/white" />
+
+        <Button
+            android:id="@+id/btnSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/gray"
+            android:drawableTop="@drawable/speed40"
+            android:text="vitesse"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:iconTint="@color/white" />
+
+        <Button
+            android:id="@+id/btnAltitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/gray"
+            android:drawableTop="@drawable/altitude50"
+            android:text="@string/altitude"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:iconTint="@color/white" />
+
+    </LinearLayout>
+
+</FrameLayout>
